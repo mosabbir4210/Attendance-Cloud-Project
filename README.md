@@ -9,7 +9,8 @@ This project is a **VM-based backend attendance ingestion system** deployed on *
 The system receives attendance data from attendance/biometric devices (or simulated clients) through a REST API and stores the data into a MySQL database.
 
 This project focuses on **cloud deployment, Linux server administration, backend API handling, and database integration**.  
-The frontend and core application logic were not the focus of this project.
+
+**The frontend and core application logic were not the focus of this project.**
 
 
 ---
@@ -36,7 +37,7 @@ Attendance Device / Client
 → Laravel REST API  
 → MySQL Database  
 
-##**The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.**
+## **The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.**
 
 ---
 
@@ -69,19 +70,18 @@ Example (simplified):
 listen 9000;
 root /var/www/mb460/public;
 index index.php;
+
 🔌 Laravel API Configuration
 API Route
-bash
-Copy code
+
 POST /api/adms/push
 Registered using:
 
-bash
-Copy code
+
 php artisan route:list
 Sample JSON Payload
 json
-Copy code
+
 {
   "device_id": "DEVICE_01",
   "user_id": "EMP001",
@@ -90,7 +90,7 @@ Copy code
 }
 Sample API Response
 json
-Copy code
+
 {
   "status": "ok",
   "inserted": 1
@@ -105,20 +105,18 @@ Data insertion verified manually
 Verification command:
 
 sql
-Copy code
+
 SELECT COUNT(*) FROM attendances;
 🧪 Testing & Verification
 API tested using curl:
 
-bash
-Copy code
+
 curl -X POST http://127.0.0.1:9000/api/adms/push \
 -H "Content-Type: application/json" \
 -d '{ ... }'
 Other checks:
 
-bash
-Copy code
+
 systemctl status nginx
 systemctl status php8.4-fpm
 php artisan route:list
@@ -157,5 +155,6 @@ Designed as a learning project for Azure / Linux / Backend fundamentals
 Mosabbir Mridu
 Beginner Cloud & System Engineer
 Learning Azure, Linux, Backend APIs, and Infrastructure
+
 
 
