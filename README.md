@@ -9,7 +9,8 @@ This project is a **VM-based backend attendance ingestion system** deployed on *
 The system receives attendance data from attendance/biometric devices (or simulated clients) through a REST API and stores the data into a MySQL database.
 
 This project focuses on **cloud deployment, Linux server administration, backend API handling, and database integration**.  
-Frontend development is intentionally not included.
+The frontend and core application logic were not the focus of this project.
+
 
 ---
 
@@ -143,3 +144,4 @@ Designed as a learning project for Azure / Linux / Backend fundamentals
 Mosabbir Mridu
 Beginner Cloud & System Engineer
 Learning Azure, Linux, Backend APIs, and Infrastructure
+
