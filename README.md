@@ -1,123 +1,145 @@
-# Cloud-Based Attendance Ingestion System (Azure + Laravel)
+# Cloud-Based Attendance Ingestion System  
+(Azure VM | Nginx | Laravel | MySQL)
+
+---
 
 ## 📌 Project Overview
-This project is a **cloud-hosted attendance data ingestion system** designed to receive raw attendance data from biometric / attendance devices and store it securely in a centralized database.
+This project is a **VM-based backend attendance ingestion system** deployed on **Microsoft Azure**.
 
-The system is deployed on **Microsoft Azure VM**, uses **Nginx + PHP-FPM**, and is built with **Laravel (API-based architecture)**.
+The system receives attendance data from attendance/biometric devices (or simulated clients) through a REST API and stores the data into a MySQL database.
 
-It demonstrates real-world skills in:
-- Cloud infrastructure
-- Secure API design
-- Backend data processing
-- Linux server administration
+This project focuses on **cloud deployment, Linux server administration, backend API handling, and database integration**.  
+Frontend development is intentionally not included.
 
 ---
 
-## 🧱 Architecture Overview
+## 🧱 Architecture Overview (VM-Based)
 
-Device / Client  
-→ HTTPS API (Nginx)  
-→ Laravel API Controller  
+Attendance Device / Client  
+→ HTTP/HTTPS Request  
+→ Nginx (Reverse Proxy)  
+→ PHP-FPM  
+→ Laravel REST API  
 → MySQL Database  
-→ Logs & Monitoring
+
+The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.
 
 ---
 
-## 🚀 Features
-- REST API endpoint to receive attendance data
-- Supports JSON-based device payloads
-- Laravel API routing & controller handling
-- MySQL database storage
-- SSL-enabled (HTTPS)
-- Deployed on Azure Virtual Machine
-- Nginx reverse proxy with PHP-FPM
+## 🔧 Environment & Versions
+
+| Component | Details |
+|--------|--------|
+| Cloud Platform | Microsoft Azure |
+| VM OS | Ubuntu Linux |
+| Web Server | Nginx |
+| PHP | PHP 8.4 (PHP-FPM) |
+| Backend Framework | Laravel |
+| Database | MySQL 8.x |
+| API Type | REST (JSON) |
+| Security | HTTPS / SSL Enabled |
 
 ---
 
-## 🔗 API Endpoint
+## ⚙️ Nginx Configuration (API Port)
 
+The Laravel application is served using **Nginx + PHP-FPM**.
+
+Key points:
+- API listens on **port 9000**
+- PHP handled via PHP-FPM socket
+- Requests routed to `public/index.php`
+
+Example (simplified):
+```nginx
+listen 9000;
+root /var/www/mb460/public;
+index index.php;
+🔌 Laravel API Configuration
+API Route
+bash
+Copy code
 POST /api/adms/push
+Registered using:
 
-
-### 📥 Sample Request Payload
-```json
+bash
+Copy code
+php artisan route:list
+Sample JSON Payload
+json
+Copy code
 {
   "device_id": "DEVICE_01",
   "user_id": "EMP001",
   "timestamp": "2025-12-16 20:15:00",
   "status": "in"
 }
-
-📤 Sample API Response
+Sample API Response
+json
+Copy code
 {
   "status": "ok",
   "inserted": 1
 }
+🗄️ Database Setup (MySQL)
+Database: mb460
 
-🛠 Technology Stack
+Table: attendances
 
-Cloud Platform: Microsoft Azure (Virtual Machine)
+Data insertion verified manually
 
-Operating System: Ubuntu Linux
+Verification command:
 
-Web Server: Nginx
+sql
+Copy code
+SELECT COUNT(*) FROM attendances;
+🧪 Testing & Verification
+API tested using curl:
 
-Backend Framework: Laravel (PHP 8.4)
+bash
+Copy code
+curl -X POST http://127.0.0.1:9000/api/adms/push \
+-H "Content-Type: application/json" \
+-d '{ ... }'
+Other checks:
 
-Database: MySQL
-
-Security: SSL / HTTPS
-
-Tools: curl, systemctl, Laravel Artisan
-
-
-📂 Project Structure (Simplified)
-attendance-cloud-project/
-├── screenshots/
-│   ├── route-list-api.png
-│   ├── api-log.png
-│   ├── mysql-data.png
-│   ├── nginx-running.png
-│   ├── ssl-enabled.png
-├── README.md
-
-📸 Proof of Work (Screenshots)
-Description	Screenshot
-Laravel API Route Registered	screenshots/route-list-api.png
-API Request Logged	screenshots/api-log.png
-Attendance Data Stored in MySQL	screenshots/mysql-data.png
-Nginx Service Running	screenshots/nginx-running.png
-HTTPS / SSL Enabled	screenshots/ssl-enabled.png
-
-🔍 Verification Commands
-
-php artisan route:list | grep adms
-curl -X POST http://127.0.0.1:9000/api/adms/push
+bash
+Copy code
 systemctl status nginx
 systemctl status php8.4-fpm
-mysql -u mb460user -p
+php artisan route:list
+📸 Proof of Work
+Screenshots included:
 
-📈 What This Project Demonstrates
+API route list
 
-Real-world cloud server deployment
+API request logs
 
-REST API design and testing
+MySQL attendance data
 
-Linux server management
+Nginx service status
 
-Secure backend configuration (SSL)
+HTTPS / SSL verification
 
-Database connectivity and validation
+See the screenshots/ directory.
 
-Production-style troubleshooting
+✅ Result
+API endpoint successfully receives attendance data
+
+Requests reach Laravel controller
+
+Data is inserted into MySQL database
+
+System runs reliably on Azure VM
+
+📌 Notes
+Source code is intentionally kept private
+
+Project demonstrates cloud + backend infrastructure skills
+
+Designed as a learning project for Azure / Linux / Backend fundamentals
 
 👤 Author
-
 Mosabbir Mridu
-Aspiring Cloud & System Engineer
-Focused on Azure, Linux, Backend APIs, and Infrastructure
-
-📌 Note
-
-Source code is intentionally kept private.
-This repository demonstrates deployment architecture, API behavior, and operational proof without exposing proprietary application code.
+Beginner Cloud & System Engineer
+Learning Azure, Linux, Backend APIs, and Infrastructure
