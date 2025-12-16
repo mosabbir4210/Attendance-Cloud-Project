@@ -110,6 +110,7 @@ sql
 
 SELECT COUNT(*) FROM attendances;
 🧪 Testing & Verification
+
 API tested using curl:
 
 
@@ -159,6 +160,7 @@ Designed as a learning project for Azure / Linux / Backend fundamentals
 Mosabbir Mridu
 Beginner Cloud & System Engineer
 Learning Azure, Linux, Backend APIs, and Infrastructure
+
 
 
 
