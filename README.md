@@ -14,6 +14,19 @@ The frontend and core application logic were not the focus of this project.
 
 ---
 
+## ☁️ Azure Infrastructure
+
+- Hosted on Microsoft Azure Virtual Machine (Ubuntu Linux)
+- Public IP exposed via Azure Networking
+- Network Security Group configured for:
+  - SSH (22)
+  - HTTP (80)
+  - HTTPS (443)
+  - Attendance API (9000)
+- Nginx used as reverse proxy on Azure VM
+
+
+
 ## 🧱 Architecture Overview (VM-Based)
 
 Attendance Device / Client  
@@ -23,7 +36,7 @@ Attendance Device / Client
 → Laravel REST API  
 → MySQL Database  
 
-The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.
+##**The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.**
 
 ---
 
@@ -144,4 +157,5 @@ Designed as a learning project for Azure / Linux / Backend fundamentals
 Mosabbir Mridu
 Beginner Cloud & System Engineer
 Learning Azure, Linux, Backend APIs, and Infrastructure
+
 
