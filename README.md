@@ -71,16 +71,28 @@ listen 9000;
 root /var/www/mb460/public;
 index index.php;
 
-🔌 Laravel API Configuration
-API Route
+Nginx is configured to listen on port 9000 to accept inbound HTTP requests from attendance devices.
+The Laravel public directory is configured as the document root, while PHP request execution is handled by php8.4-fpm, ensuring proper separation between the web server and application runtime.
+
+
+---
+
+🔌 API Service Configuration
+
+Service Endpoint
 
 POST /api/adms/push
-Registered using:
 
+The endpoint is registered at the application layer and validated using:
 
 php artisan route:list
-Sample JSON Payload
-json
+
+This confirms that the API service is active and reachable from the web server.
+
+
+---
+
+Sample Request Payload
 
 {
   "device_id": "DEVICE_01",
@@ -88,80 +100,109 @@ json
   "timestamp": "2025-12-16 20:15:00",
   "status": "in"
 }
-Sample API Response
-json
+
+
+---
+
+Sample Service Response
 
 {
   "status": "ok",
   "inserted": 1
 }
 
-🗄️ Database Setup (MySQL)
 
-Database: mb460
+---
 
-Table: attendances
+🗄️ Data Storage (MySQL)
 
-Data insertion verified manually
+Database Name: mb460
+
+Table Name: attendances
+
+
+Attendance records received by the API service are written to the MySQL database.
+Data persistence was verified directly at the database level.
 
 Verification command:
 
-sql
-
 SELECT COUNT(*) FROM attendances;
-🧪 Testing & Verification
 
-API tested using curl:
 
+---
+
+🧪 Service Testing & Health Verification
+
+The API service was tested from the server side using curl to simulate requests from attendance devices:
 
 curl -X POST http://127.0.0.1:9000/api/adms/push \
 -H "Content-Type: application/json" \
--d '{ ... }'
+-d '{
+  "device_id": "DEVICE_01",
+  "user_id": "EMP001",
+  "timestamp": "2025-12-16 20:15:00",
+  "status": "in"
+}'
 
-Other checks:
+Operational health checks:
 
 systemctl status nginx
 systemctl status php8.4-fpm
 php artisan route:list
 
-📸 Proof of Work
+These checks confirm that all required services are running and properly integrated.
 
-Screenshots included:
 
-API route list
+---
 
-API request logs
+📸 Operational Evidence
 
-MySQL attendance data
+The screenshots/ directory contains the following verification artifacts:
+
+API endpoint registration
+
+Request processing and logs
+
+MySQL attendance records
 
 Nginx service status
 
-HTTPS / SSL verification
+HTTPS / SSL configuration status
 
-See the screenshots/ directory.
 
-✅ Result
-API endpoint successfully receives attendance data
 
-Requests reach Laravel controller
+---
 
-Data is inserted into MySQL database
+✅ Operational Result
 
-System runs reliably on Azure VM
+Attendance devices successfully connect to the API service
+
+Requests pass through the web server and application runtime without errors
+
+Attendance data is reliably stored in the database
+
+The system operates stably on a Microsoft Azure Virtual Machine
+
+
+
+---
 
 📌 Notes
-Source code is intentionally kept private
 
-Project demonstrates cloud + backend infrastructure skills
+Application source code is intentionally kept private
 
-Designed as a learning project for Azure / Linux / Backend fundamentals
+Emphasis is placed on service configuration, integration, and operational stability
+
+Project represents practical system and infrastructure engineering work rather than application development
+
+
+
+---
 
 👤 Author
+
 Mosabbir Mridu
-Beginner Cloud & System Engineer
-Learning Azure, Linux, Backend APIs, and Infrastructure
-
-
-
+System & Cloud Engineer (Early Career)
+Focused on Linux servers, service integration, and cloud infrastructure operations
 
 
