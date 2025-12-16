@@ -95,7 +95,9 @@ json
   "status": "ok",
   "inserted": 1
 }
+
 🗄️ Database Setup (MySQL)
+
 Database: mb460
 
 Table: attendances
@@ -114,13 +116,15 @@ API tested using curl:
 curl -X POST http://127.0.0.1:9000/api/adms/push \
 -H "Content-Type: application/json" \
 -d '{ ... }'
-Other checks:
 
+Other checks:
 
 systemctl status nginx
 systemctl status php8.4-fpm
 php artisan route:list
+
 📸 Proof of Work
+
 Screenshots included:
 
 API route list
@@ -155,6 +159,7 @@ Designed as a learning project for Azure / Linux / Backend fundamentals
 Mosabbir Mridu
 Beginner Cloud & System Engineer
 Learning Azure, Linux, Backend APIs, and Infrastructure
+
 
 
 
