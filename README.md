@@ -1,6 +1,9 @@
 # Cloud-Based Attendance Ingestion System  
 (Azure VM | Nginx | Laravel | MySQL)
 
+> This project was built as part of my **Microsoft Azure learning journey** using Microsoft Learn resources.  
+> 🔗 **Microsoft Learn Contributor ID:** https://learn.microsoft.com/?wt.mc_id=studentamb_490811
+
 ---
 
 ## 📌 Project Overview
@@ -152,7 +155,13 @@ php artisan route:list
 
 These checks confirm that all required services are running and properly integrated.
 
-
+🔐 Security & Networking Considerations
+Azure Network Security Group (NSG) used to restrict inbound traffic
+Only required ports are publicly exposed
+HTTPS enabled using SSL/TLS
+Reverse proxy architecture implemented using Nginx
+Direct database access restricted to localhost
+Backend services isolated from direct external access
 ---
 
 📸 Operational Evidence
@@ -183,6 +192,13 @@ Attendance data is reliably stored in the database
 
 The system operates stably on a Microsoft Azure Virtual Machine
 
+🎓 Learning & Community Impact
+This project was created to:
+Practice real-world Azure VM deployments
+Understand Linux-based backend service integration
+Learn secure API exposure patterns
+Share deployment and infrastructure knowledge with the learning community
+The documentation and architecture are intentionally written to help beginners and junior engineers understand cloud-based backend systems.
 
 
 ---
@@ -204,5 +220,6 @@ Project represents practical system and infrastructure engineering work rather t
 Mosabbir Mridu
 System & Cloud Engineer (Early Career)
 Focused on Linux servers, service integration, and cloud infrastructure operations
+
 
 
