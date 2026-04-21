@@ -13,6 +13,12 @@ The system receives attendance data from attendance/biometric devices (or simula
 
 This project focuses on **cloud deployment, Linux server administration, backend API handling, and database integration**.  
 
+<p align="center">
+  <img src="screenshorts/Attendance_Overview.png" alt="Hybrid Cloud Overview" width="850">
+</p>
+
+
+
 **The frontend and core application logic were not the focus of this project.**
 
 
