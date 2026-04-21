@@ -19,7 +19,7 @@ This project focuses on **cloud deployment, Linux server administration, backend
 
 
 
-# **The frontend and core application logic were not the focus of this project.**
+# The frontend and core application logic were not the focus of this project.
 
 
 
