@@ -103,7 +103,7 @@ This confirms that the API service is active and reachable from the web server.
 ---
 
 Sample Request Payload
-
+```bash
 {
   "device_id": "DEVICE_01",
   "user_id": "EMP001",
@@ -121,8 +121,8 @@ Sample Service Response
   "inserted": 1
 }
 
+```
 
----
 <p align="center">
   <img src="screenshorts/route-list-api.png" alt="Hybrid Cloud Overview" width="850">
 </p>
@@ -138,14 +138,12 @@ Attendance records received by the API service are written to the MySQL database
 Data persistence was verified directly at the database level.
 
 Verification command:
-
+```bash
 SELECT COUNT(*) FROM attendances;
-
-
----
+```
 
 🧪 Service Testing & Health Verification
-
+```bash
 The API service was tested from the server side using curl to simulate requests from attendance devices:
 
 curl -X POST http://127.0.0.1:9000/api/adms/push \
@@ -164,7 +162,7 @@ systemctl status php8.4-fpm
 php artisan route:list
 
 These checks confirm that all required services are running and properly integrated.
-
+```
 🔐 Security & Networking Considerations
 Azure Network Security Group (NSG) used to restrict inbound traffic
 Only required ports are publicly exposed
