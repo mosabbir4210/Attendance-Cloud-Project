@@ -141,7 +141,9 @@ Verification command:
 ```bash
 SELECT COUNT(*) FROM attendances;
 ```
-
+<p align="center">
+  <img src="screenshorts/mysql-attendance-data.png" alt="Hybrid Cloud Overview" width="850">
+</p>
 🧪 Service Testing & Health Verification
 ```bash
 The API service was tested from the server side using curl to simulate requests from attendance devices:
