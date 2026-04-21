@@ -15,7 +15,7 @@ This project focuses on **cloud deployment, Linux server administration, backend
 
 **The frontend and core application logic were not the focus of this project.**
 <p align="center">
-  <img src="Screenshots/azure-vm-overview.png" alt="Hybrid Cloud Overview" width="850">
+  <img src="screenshorts/azure-vm-overview.png" alt="Hybrid Cloud Overview" width="850">
 </p>
 
 
