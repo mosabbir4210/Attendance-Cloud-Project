@@ -98,7 +98,9 @@ php artisan route:list
 
 This confirms that the API service is active and reachable from the web server.
 
-
+<p align="center">
+  <img src="screenshorts/api-hit-log.png" alt="Hybrid Cloud Overview" width="850">
+</p>
 ---
 
 Sample Request Payload
