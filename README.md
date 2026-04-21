@@ -123,10 +123,6 @@ Sample Service Response
 
 ```
 
-<p align="center">
-  <img src="screenshorts/route-list-api.png" alt="Hybrid Cloud Overview" width="850">
-</p>
-
 🗄️ Data Storage (MySQL)
 
 Database Name: mb460
@@ -145,6 +141,7 @@ SELECT COUNT(*) FROM attendances;
   <img src="screenshorts/mysql-attendance-data.png" alt="Hybrid Cloud Overview" width="850">
 </p>
 🧪 Service Testing & Health Verification
+
 ```bash
 The API service was tested from the server side using curl to simulate requests from attendance devices:
 
@@ -157,8 +154,15 @@ curl -X POST http://127.0.0.1:9000/api/adms/push \
   "status": "in"
 }'
 
+```
+
+<p align="center">
+  <img src="screenshorts/route-list-api.png" alt="Hybrid Cloud Overview" width="850">
+</p>
+
 Operational health checks:
 
+```bash
 systemctl status nginx
 systemctl status php8.4-fpm
 php artisan route:list
