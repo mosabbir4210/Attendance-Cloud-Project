@@ -70,6 +70,9 @@ Key points:
 - API listens on **port 9000**
 - PHP handled via PHP-FPM socket
 - Requests routed to `public/index.php`
+<p align="center">
+  <img src="screenshorts/nginx-running.png" alt="Hybrid Cloud Overview" width="850">
+</p>
 
 Example (simplified):
 ```nginx
