@@ -42,9 +42,7 @@ Attendance Device / Client
 → MySQL Database  
 
 ## **The entire setup runs on a **single Azure Linux Virtual Machine** for learning and demonstration purposes.**
-<p align="center">
-  <img src="screenshorts/azure-vm-overview.png" alt="Hybrid Cloud Overview" width="850">
-</p>
+
 ---
 
 ## 🔧 Environment & Versions
@@ -75,16 +73,17 @@ Key points:
 </p>
 
 Example (simplified):
-```nginx
+```bash
 listen 9000;
 root /var/www/mb460/public;
 index index.php;
+```
 
 Nginx is configured to listen on port 9000 to accept inbound HTTP requests from attendance devices.
 The Laravel public directory is configured as the document root, while PHP request execution is handled by php8.4-fpm, ensuring proper separation between the web server and application runtime.
 
 
----
+
 
 🔌 API Service Configuration
 
@@ -124,6 +123,9 @@ Sample Service Response
 
 
 ---
+<p align="center">
+  <img src="screenshorts/route-list-api.png" alt="Hybrid Cloud Overview" width="850">
+</p>
 
 🗄️ Data Storage (MySQL)
 
