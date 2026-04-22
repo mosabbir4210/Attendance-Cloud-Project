@@ -58,6 +58,8 @@ Attendance Device / Client
 
 ## 🔧 Environment & Versions
 
+<p align="center">
+  
 | Component | Details |
 |--------|--------|
 | Cloud Platform | Microsoft Azure |
@@ -68,6 +70,8 @@ Attendance Device / Client
 | Database | MySQL 8.x |
 | API Type | REST (JSON) |
 | Security | HTTPS / SSL Enabled |
+
+</p>
 
 ---
 
