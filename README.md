@@ -38,6 +38,9 @@ This project focuses on **cloud deployment, Linux server administration, backend
   - Attendance API (9000)
 - Nginx used as reverse proxy on Azure VM
 
+<p align="center">
+  <img src="screenshorts/azure-vm-overview.png" alt="Hybrid Cloud Overview" width="850">
+</p>
 
 
 ## 🧱 Architecture Overview (VM-Based)
