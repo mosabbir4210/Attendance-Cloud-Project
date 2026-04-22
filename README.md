@@ -58,7 +58,7 @@ Attendance Device / Client
 
 ## 🔧 Environment & Versions
 
-<p align="center">
+
   
 | Component | Details |
 |--------|--------|
@@ -71,7 +71,7 @@ Attendance Device / Client
 | API Type | REST (JSON) |
 | Security | HTTPS / SSL Enabled |
 
-</p>
+
 
 ---
 
